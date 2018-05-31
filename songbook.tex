@@ -1,0 +1,77 @@
+% My songbook
+% First revision started 2018-05-04
+%% This document is created to test out the songs package and its features
+
+\documentclass[10pt, a4paper]{article}
+%\usepackage{a4wide}
+\usepackage[a4paper, lmargin=2cm, rmargin=2cm]{geometry}
+\usepackage[swedish,english]{babel}
+\usepackage[utf8]{inputenc} % Input symbol encoding
+\usepackage[bookmarks]{hyperref}
+
+
+\usepackage[chorded]{songs}
+
+% Redefine how lyrics are written. Default \normalfont\normal
+\renewcommand{\lyricfont}{\normalfont\small}
+
+% Redefine how chords are written. Default \rmfamily\bf
+\renewcommand{\printchord}[1]{\rmfamily\tt\small#1}
+
+% Text to start each Chorus
+%\renewcommand{\everychorus}{\textnote{Ref.}}
+
+%\noversenumbers
+
+\DeclareLyricChar{\r{a}} % å
+\DeclareLyricChar{\"a} % ä
+\DeclareLyricChar{\"o} % ö
+
+\newindex{mainindex}{mySongbook}
+\newauthorindex{authorindex}{mySongbookAuthor}
+
+\repchoruses
+
+\input{./lib/chordDefinitions.tex}
+
+%
+% BEGIN DOCUMENT
+% 
+\begin{document}
+\showindex{Titelindex)}{mainindex}
+
+\songsection{Sånger på Svenska}
+\renewcommand{\thesongnum}{S\arabic{songnum}}
+  
+\begin{songs}{mainindex,authorindex}
+  \input{./lib/sv/avLangtanTillDig}
+  \input{./lib/sv/dansaPaMinGrav}
+  \input{./lib/sv/flourtanten}
+  \input{./lib/sv/fullaForKarlekensSkull}
+  \input{./lib/sv/gatfullaFolket}
+  \input{./lib/sv/honanAgda}
+  \input{./lib/sv/sverige}
+  \input{./lib/sv/trubbel}
+  \input{./lib/sv/utanDinaAndetag}
+  \input{./lib/sv/viBorPaLandet}
+  \input{./lib/sv/varvindarFriska}
+\end{songs}
+
+\songsection{Sånger på Engelska}
+\renewcommand{\thesongnum}{E\arabic{songnum}}
+\begin{songs}{mainindex,authorindex}
+  \input{./lib/en/boxer}
+   \input{./lib/en/cecilia}
+   \input{./lib/en/fatherAndSon}
+   \input{./lib/en/fernando}
+   \input{./lib/en/halo}
+   \input{./lib/en/ironic}
+   \input{./lib/en/ourLastSummer}
+   \input{./lib/en/wakeMeUp}
+   \input{./lib/en/youreGonnaGoFarKid}
+\end{songs}
+
+\showindex{Artistindex}{authorindex}
+\end{document}
+
+

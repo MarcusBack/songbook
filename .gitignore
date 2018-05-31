@@ -1,0 +1,11 @@
+**/.*
+!.gitignore
+**/*~
+**/*.aux
+**/*.log
+**/*.out
+**/*.pdf
+**/*.sbx
+**/*.sxd
+**/*.sxc
+lib/notYetFinsihed/
